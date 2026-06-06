@@ -1,7 +1,7 @@
 const animais = [
   {
     id: "thor",
-    foto: "/img/cachorro 3.jpg",
+    foto: "./img/cachorro 3.jpg",
     nome: "Thor",
     especie: "Cachorro",
     especieChave: "cachorro",
@@ -16,7 +16,7 @@ const animais = [
   },
   {
     id: "luna",
-    foto: "/img/gato 2.jpg",
+    foto: "./img/gato 2.jpg",
     nome: "Luna",
     especie: "Gato",
     especieChave: "gato",
@@ -99,7 +99,7 @@ const publicacoes = [
     cor: "#DDF3DF"
   },
   {
-    imagem: ".img/familia arca.webp",
+    imagem: "./img/familia arca.webp",
     categoria: "Notícias",
     titulo: "Programa Arca aproxima famílias e animais em novo evento",
     texto: "A ação levou orientação sobre guarda responsável, vacinação e adaptação.",
