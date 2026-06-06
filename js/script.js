@@ -31,7 +31,7 @@ const animais = [
   },
   {
     id: "bob",
-    foto: "/img/cachorro 2.jpg",
+    foto: "./img/cachorro 2.jpg",
     nome: "Bob",
     especie: "Cachorro",
     especieChave: "cachorro",
@@ -46,7 +46,7 @@ const animais = [
   },
   {
     id: "mia",
-    foto: "/img/gato1.jpg",
+    foto: "./img/gato1.jpg",
     nome: "Mia",
     especie: "Gato",
     especieChave: "gato",
@@ -61,7 +61,7 @@ const animais = [
   },
   {
     id: "rex",
-    foto: "/img/cachorro 1.jpg",
+    foto: "./img/cachorro 1.jpg",
     nome: "Rex",
     especie: "Cachorro",
     especieChave: "cachorro",
@@ -78,28 +78,28 @@ const animais = [
 
 const publicacoes = [
   {
-    imagem: "/img/cachorro 4.jpg",
+    imagem: "./img/cachorro 4.jpg",
     categoria: "Dicas práticas",
     titulo: "Como criar uma rotina que deixa seu pet mais seguro",
     texto: "Horários para alimentação, passeio, descanso e brincadeira reduzem ansiedade.",
     cor: "#FFE0C5"
   },
   {
-    imagem: "/img/gato 3.jpg",
+    imagem: "./img/gato 3.jpg",
     categoria: "Materiais educativos",
     titulo: "Por que castrar ajuda a combater o abandono?",
     texto: "A castração evita ninhadas inesperadas e protege a saúde dos animais.",
     cor: "#FFF5B6"
   },
   {
-    imagem: "/img/cachorro lendo.jpg",
+    imagem: "./img/cachorro lendo.jpg",
     categoria: "Adoção responsável",
     titulo: "O que pensar antes de adotar um animal",
     texto: "Tempo, orçamento, espaço e compromisso precisam entrar na decisão.",
     cor: "#DDF3DF"
   },
   {
-    imagem: "/img/familia arca.webp",
+    imagem: ".img/familia arca.webp",
     categoria: "Notícias",
     titulo: "Programa Arca aproxima famílias e animais em novo evento",
     texto: "A ação levou orientação sobre guarda responsável, vacinação e adaptação.",
