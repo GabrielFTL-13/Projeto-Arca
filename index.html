@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa Arca - Protótipo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <a class="marca marca-logo" href="#inicio" data-pagina="inicio" aria-label="Programa Arca">
+      <img src="/img/arca-logo.png" alt="Programa Arca" />
+    </a>
+
+    <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="menu" aria-label="Menu principal">
+      <button class="ativo" data-pagina="inicio">Início</button>
+      <button data-pagina="quem-somos">Quem Somos</button>
+      <button data-pagina="adotar">Quero Adotar</button>
+      <button data-pagina="ajudar">Quero Ajudar</button>
+      <button data-pagina="parcerias">Parcerias</button>
+      <button data-pagina="blog">Blog</button>
+      <button class="botao-entrada" data-pagina="login">Login</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pagina ativa" id="pagina-inicio">
+      <div class="destaque">
+        <div class="destaque-texto">
+          <p class="etiqueta">Adoção responsável em Serra - ES</p>
+          <h1>Todo animal merece um lar cheio de amor</h1>
+          <p>O Programa Arca conecta animais resgatados a famílias preparadas para acolher, cuidar e transformar uma história.</p>
+
+          <div class="acoes">
+            <button class="botao botao-amarelo" data-pagina="adotar">Quero adotar</button>
+            <button class="botao botao-claro" data-pagina="ajudar">Quero ajudar</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="faixa-numeros" aria-label="Impacto do Programa Arca">
+        <article><strong>3.466</strong><span>animais acolhidos</span></article>
+        <article><strong>3.058</strong><span>castrações realizadas</span></article>
+        <article><strong>114</strong><span>eventos de adoção</span></article>
+        <article><strong>R$49k</strong><span>arrecadados em abril/25</span></article>
+      </section>
+
+
+      <section class="conteudo">
+        <div class="titulo-secao">
+          <span>Animais disponíveis</span>
+          <h2>Amigos esperando por você</h2>
+          <p>Conheça alguns cães e gatos que já receberam cuidado e agora precisam de uma casa.</p>
+        </div>
+
+        <div class="carrossel-animais" aria-label="Carrossel de animais disponíveis">
+          <button class="seta-carrossel seta-esquerda" type="button" aria-label="Ver animais anteriores">‹</button>
+          <div class="linha-animais" id="animais-inicio"></div>
+          <button class="seta-carrossel seta-direita" type="button" aria-label="Ver próximos animais">›</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="pagina" id="pagina-quem-somos">
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          <span>Quem somos</span>
+          <h2>A gente cuida até o encontro certo acontecer.</h2>
+          <p>O Projeto Arca Serra é uma iniciativa independente e sem fins lucrativos dedicada à proteção de animais abandonados.</p>
+        </div>
+
+        <div class="grade-informacoes">
+          <article class="cartao">
+            <h3>Sobre o projeto</h3>
+            <p>Nascemos da união de voluntários que acreditam que abandono não pode ser destino. Resgatamos, tratamos e preparamos cada animal para uma nova chance.</p>
+          </article>
+
+          <article class="cartao cartao-verde">
+            <h3>Nossa missão</h3>
+            <p>Promover resgate responsável, castração, educação e adoção consciente, sempre colocando o bem-estar animal no centro das decisões.</p>
+          </article>
+
+          <article class="cartao">
+            <h3>Como atuamos</h3>
+            <p>Garantimos atendimento veterinário, alimentação, abrigo temporário e acompanhamento com apoio da comunidade e de parceiros locais.</p>
+          </article>
+
+          <article class="cartao">
+            <h3>Adoção responsável</h3>
+            <p>Conversamos com o tutor, entendemos a rotina da casa e buscamos uma adoção segura para o animal e para a família.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-adotar">
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          <span>Quero adotar</span>
+          <h2>Encontre um companheiro para a sua vida real.</h2>
+          <p>Use os filtros para conhecer animais que combinam com sua rotina, espaço e jeito de cuidar.</p>
+        </div>
+
+        <div class="filtros">
+          <button class="ativo" data-filtro="todos">Todos</button>
+          <button data-filtro="cachorro">Cachorros</button>
+          <button data-filtro="gato">Gatos</button>
+          <button data-filtro="pequeno">Porte pequeno</button>
+          <button data-filtro="medio">Porte médio</button>
+          <button data-filtro="grande">Porte grande</button>
+        </div>
+
+        <div class="grade-animais" id="grade-animais"></div>
+
+        <blockquote class="frase">
+          "Adotar é abrir espaço para uma história continuar melhor."
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-ajudar">
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          <span>Quero ajudar</span>
+          <h2>Todo apoio vira cuidado real.</h2>
+          <p>Ração, tempo, lar temporário, divulgação ou doação: tudo ajuda quando existe uma rede por trás.</p>
+        </div>
+
+        <div class="grade-ajuda">
+          <article class="cartao-ajuda">
+            <div class="imagem-ajuda"><img src="../img/raçao.jpg" alt="Doação de ração"></div>
+            <h3>Doação de ração</h3>
+            <p>Contribua com ração ou itens essenciais para os animais acolhidos.</p>
+          </article>
+
+          <article class="cartao-ajuda">
+            <div class="imagem-ajuda"><img src="../img/doaçao de dinheiro.png" alt="Doação financeira"></div>
+            <h3>Doação financeira</h3>
+            <p>Ajude a custear consultas, medicamentos, exames, transporte e estrutura.</p>
+          </article>
+
+          <article class="cartao-ajuda clicavel" data-pagina="castracao">
+            <div class="imagem-ajuda"><img src="/img/vet.jpg" alt="Castração gratuita"></div>
+            <h3>Castração gratuita</h3>
+            <p>Agende atendimento para seu pet com clínicas parceiras.</p>
+          </article>
+
+          <article class="cartao-ajuda">
+            <div class="imagem-ajuda"><img src="/img/lar-temporario.webp" alt="Lar temporário"></div>
+            <h3>Lar temporário</h3>
+            <p>Acolha um animal resgatado enquanto ele espera a adoção definitiva.</p>
+          </article>
+
+          <article class="cartao-ajuda">
+            <div class="imagem-ajuda"><img src="/img/voluntario.jpg" alt="Voluntariado"></div>
+            <h3>Voluntariado</h3>
+            <p>Participe de eventos, transporte, resgates e ações educativas.</p>
+          </article>
+
+          <article class="cartao-ajuda clicavel" data-pagina="reportar">
+            <div class="imagem-ajuda"><img src="/img/reportar.jpg" alt="Reportar animal"></div>
+            <h3>Reportar animal</h3>
+            <p>Avise sobre um animal perdido, ferido, abandonado ou em risco.</p>
+          </article>
+        </div>
+
+        <div class="caixa-doacao">
+          <h3>Ponto de doação de itens</h3>
+          <p>Rancho Bela Vista - Rodovia Governador Mario Covas (BR-101), Km 251, Belvedere. Depois do posto da PRF, lado esquerdo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-parcerias">
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          <span>Parcerias</span>
+          <h2>Uma rede forte salva mais vidas.</h2>
+          <p>Empresas, clínicas, poder público e comunidade ajudam a transformar intenção em atendimento, alimento e adoção.</p>
+        </div>
+
+        <div class="grade-impacto">
+          <article><strong>3.466</strong><span>animais acolhidos</span></article>
+          <article><strong>3.058</strong><span>castrações</span></article>
+          <article><strong>114</strong><span>eventos de adoção</span></article>
+          <article><strong>1.308</strong><span>devoluções à comunidade</span></article>
+          <article><strong>217</strong><span>atendimentos de maus-tratos</span></article>
+          <article><strong>75%</strong><span>cães acolhidos</span></article>
+        </div>
+
+        <article class="cartao">
+          <h3>Nossos parceiros</h3>
+          <div class="lista-parceiros">
+            <span>Clínica VetCare</span>
+            <span>PetShop Serra</span>
+            <span>Prefeitura de Serra</span>
+            <span>Rede ES</span>
+            <span>RaçãoMais</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-blog">
+      <div class="conteudo">
+        <div class="titulo-pagina">
+          <span>Blog</span>
+          <h2>Informação também é cuidado.</h2>
+          <p>Conteúdos simples para quem quer adotar melhor, cuidar melhor e ajudar com consciência.</p>
+        </div>
+
+        <div class="grade-blog" id="grade-blog"></div>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-login">
+      <div class="area-formulario">
+        <form class="cartao-formulario">
+          <h2>Entrar</h2>
+          <p>Acesse sua conta para acompanhar adoções, agendamentos e pedidos.</p>
+
+          <label for="email-login">E-mail</label>
+          <input id="email-login" type="email" placeholder="seu@email.com">
+
+          <div class="linha-label">
+            <label for="senha-login">Senha</label>
+            <a href="#login">Esqueci a senha</a>
+          </div>
+          <input id="senha-login" type="password" placeholder="Digite sua senha">
+
+          <label class="linha-check"><input type="checkbox"> Lembrar de mim</label>
+          <button class="botao botao-verde completo" type="button" data-pagina="inicio">Entrar</button>
+
+          <div class="separador">ou</div>
+
+          <div class="botoes-sociais">
+            <button type="button">Facebook</button>
+            <button type="button">Google</button>
+          </div>
+
+          <p class="nota-formulario">Não tem conta? <button type="button" data-pagina="registro">Cadastre-se</button></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-registro">
+      <div class="conteudo estreito">
+        <div class="titulo-pagina">
+          <span>Criar conta</span>
+          <h2>Cadastro de tutor responsável.</h2>
+          <p>Essas informações ajudam a ONG a entender se o animal terá rotina, segurança e cuidado depois da adoção.</p>
+        </div>
+
+        <form class="cartao-formulario">
+          <h3>Dados pessoais</h3>
+
+          <label for="nome">Nome completo</label>
+          <input id="nome" type="text" placeholder="Seu nome">
+
+          <div class="linha-formulario">
+            <div><label for="cpf">CPF</label><input id="cpf" type="text" placeholder="000.000.000-00"></div>
+            <div><label for="telefone">Telefone</label><input id="telefone" type="text" placeholder="(27) 00000-0000"></div>
+          </div>
+
+          <label for="endereco">Endereço</label>
+          <input id="endereco" type="text" placeholder="Rua, número, bairro">
+
+          <div class="linha-formulario">
+            <div><label for="ocupacao">Ocupação</label><input id="ocupacao" type="text" placeholder="Sua ocupação"></div>
+            <div>
+              <label for="renda">Renda familiar</label>
+              <select id="renda">
+                <option>Até R$ 1.500</option>
+                <option>R$ 1.500 a R$ 3.000</option>
+                <option>R$ 3.000 a R$ 5.000</option>
+                <option>Acima de R$ 5.000</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="objetivo">Por que você quer adotar?</label>
+          <textarea id="objetivo" rows="4" placeholder="Conte um pouco sobre sua rotina e motivação..."></textarea>
+
+          <button class="botao botao-verde completo" type="button" data-pagina="login">Criar conta</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-reportar">
+      <div class="conteudo estreito">
+        <div class="titulo-pagina">
+          <span>Reportar animal</span>
+          <h2>Ajude a equipe a entender a urgência.</h2>
+          <p>Quanto mais preciso for o relato, mais rápido a rede consegue avaliar o melhor caminho.</p>
+        </div>
+
+        <form class="cartao-formulario">
+          <h3>Tipo e situação</h3>
+
+          <div class="grupo-chips">
+            <label><input type="radio" name="tipo" checked> Cachorro</label>
+            <label><input type="radio" name="tipo"> Gato</label>
+          </div>
+
+          <div class="grupo-chips">
+            <label><input type="radio" name="situacao" checked> Para doação</label>
+            <label><input type="radio" name="situacao"> Abandonado</label>
+            <label><input type="radio" name="situacao"> Ferido</label>
+            <label><input type="radio" name="situacao"> Maus-tratos</label>
+            <label><input type="radio" name="situacao"> Perdido</label>
+          </div>
+
+          <h3>Localização</h3>
+
+          <label for="local">Endereço completo</label>
+          <input id="local" type="text" placeholder="Rua, número, bairro">
+
+          <div class="linha-formulario">
+            <div><label for="cidade">Cidade</label><input id="cidade" type="text" placeholder="Serra"></div>
+            <div><label for="estado">Estado</label><input id="estado" type="text" placeholder="ES"></div>
+          </div>
+
+          <label for="referencia">Ponto de referência</label>
+          <input id="referencia" type="text" placeholder="Ex: em frente ao mercado">
+
+          <button class="botao botao-verde completo" type="button" data-pagina="ajudar">Enviar relato</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="pagina" id="pagina-castracao">
+      <div class="conteudo estreito">
+        <div class="titulo-pagina">
+          <span>Castração gratuita</span>
+          <h2>Um cuidado que previne abandono.</h2>
+          <p>Preencha os dados do animal e escolha uma data disponível para o atendimento.</p>
+        </div>
+
+        <form class="cartao-formulario">
+          <h3>Dados do animal</h3>
+
+          <div class="linha-formulario">
+            <div>
+              <label for="sexo">Sexo</label>
+              <select id="sexo"><option>Macho</option><option>Fêmea</option></select>
+            </div>
+            <div><label for="idade">Idade</label><input id="idade" type="text" placeholder="Ex: 2 anos"></div>
+          </div>
+
+          <label for="raca">Raça</label>
+          <input id="raca" type="text" placeholder="Ex: SRD">
+
+          <label for="email-confirmacao">E-mail para confirmação</label>
+          <input id="email-confirmacao" type="email" placeholder="seu@email.com">
+
+          <div class="calendario">
+            <div class="calendario-topo">
+              <button type="button" aria-label="Mês anterior">‹</button>
+              <strong>Abril 2026</strong>
+              <button type="button" aria-label="Próximo mês">›</button>
+            </div>
+            <div class="grade-calendario" id="grade-calendario"></div>
+          </div>
+
+          <label class="linha-check"><input id="termos-castracao" type="checkbox"> Estou ciente dos termos de agendamento.</label>
+          <button class="botao botao-verde completo" type="button" id="confirmar-castracao">Agendar castração</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-fundo" id="modal-animal" aria-hidden="true">
+    <article class="modal" role="dialog" aria-modal="true" aria-labelledby="nome-modal">
+      <button class="fechar-modal" type="button" aria-label="Fechar">×</button>
+      <div class="foto-modal" id="foto-modal"></div>
+      <h2 id="nome-modal"></h2>
+      <div class="campos-modal" id="campos-modal"></div>
+      <p id="descricao-modal"></p>
+
+      <div class="etapa-adocao ativa" id="etapa-inicio">
+        <label class="linha-check"><input id="termos-adocao" type="checkbox"> Estou ciente e concordo com os termos de adoção.</label>
+        <div class="acoes-modal">
+          <button class="botao botao-contorno" type="button" data-fechar-modal>Cancelar</button>
+          <button class="botao botao-verde" type="button" id="iniciar-adocao">Quero adotar</button>
+        </div>
+      </div>
+
+      <div class="etapa-adocao" id="etapa-analise">
+        <div class="cartao-status">
+          <span>⏳</span>
+          <div class="progresso"><div id="barra-progresso"></div></div>
+          <p>Estamos analisando seus dados para seguir com a adoção.</p>
+          <button class="botao botao-contorno" type="button" id="cancelar-adocao">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="etapa-adocao" id="etapa-sucesso">
+        <div class="cartao-status">
+          <span>🎉</span>
+          <h2>Sucesso!</h2>
+          <p>Seu novo amigo está esperando por você na sede da nossa ONG.</p>
+          <button class="botao botao-verde" type="button" data-fechar-modal>Entendido</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
